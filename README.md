@@ -9,7 +9,7 @@
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Overview](#-overview)
 - [Architecture & Pipeline Workflow](#-architecture--pipeline-workflow)
@@ -30,7 +30,7 @@
 
 ---
 
-## 🔍 Overview
+## Overview
 
 Hyperspectral sensors collect hundreds of narrow, contiguous spectral bands across the electromagnetic spectrum. However, raw HSI data cubes are frequently corrupted by real-world mixed noise during data acquisition, including:
 - **Zero-mean Gaussian noise** (sensor thermal & read noise)
@@ -41,7 +41,7 @@ Hyperspectral sensors collect hundreds of narrow, contiguous spectral bands acro
 
 ---
 
-## 🏗️ Architecture & Pipeline Workflow
+## Architecture & Pipeline Workflow
 
 ```mermaid
 flowchart TD
@@ -68,7 +68,7 @@ flowchart TD
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 SpectraClean/
@@ -94,7 +94,7 @@ SpectraClean/
 
 ---
 
-## ✨ Key Features
+## Key Features
 
 - **Universal Dataset Support**: Loads both native MATLAB `.mat` files and NumPy `.npy` HSI data cubes. automatically caches `.mat` conversions for zero-overhead re-loading.
 - **Realistic Mixed Noise Generator**:
@@ -145,7 +145,7 @@ pip install -e .
 
 ---
 
-## 🚀 Usage Guide
+## Usage Guide
 
 ### 1. Quickstart (Synthetic Demo)
 Run the self-contained demo script. No dataset download required!
@@ -227,7 +227,7 @@ plot_comparison(clean_cube, noisy_cube, denoised_cube, band_idx=25)
 
 ---
 
-## 🧮 Algorithmic Framework
+## Algorithmic Framework
 
 ### Step 1: Fast RPCA Decomposition
 An HSI dataset $M \in \mathbb{R}^{HW \times B}$ exhibits high correlation across spectral channels (low-rank structure $L$) alongside sparse impulse/stripe corruptions ($S$):
@@ -246,7 +246,7 @@ $$\min_{L, S} \|L\|_* + \lambda \|S\|_1 \quad \text{subject to} \quad M = L + S$
 
 ---
 
-## 📊 Quantitative Evaluation Metrics
+## Quantitative Evaluation Metrics
 
 The pipeline measures restoration performance using three standard HSI quality indicators:
 
@@ -258,7 +258,7 @@ The pipeline measures restoration performance using three standard HSI quality i
 
 ---
 
-## 🌐 Hyperspectral Datasets
+## Hyperspectral Datasets
 
 SpectraClean is compatible with all standard HSI benchmark datasets, including:
 
@@ -270,21 +270,21 @@ You can download `.mat` format benchmark datasets from the [UPV/EHU Hyperspectra
 
 ---
 
-## 📄 Project Documentation
+## Project Documentation
 
 A comprehensive project report explaining the mathematical derivation, experimental setup, and quantitative benchmark analysis is available under:
 - [`docs/Project_Report.pdf`](docs/Project_Report.pdf)
 
 ---
 
-## 👨‍💻 Author & Contributing
+## Author & Contributing
 
 - **Author**: Shivam Gupta ([@ShivamGupta385](https://github.com/ShivamGupta385))
 - Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/ShivamGupta385/SpectraClean/issues).
 
 ---
 
-## 📜 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
